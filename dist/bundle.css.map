@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/index.css"],"names":[],"mappings":"AAAA;EACE,YAAY;AACd","file":"bundle.css","sourcesContent":[".my-class {\n  font-size: 2;\n}\n"]}
