@@ -1,1 +1,2 @@
-/api/*  https://gumcast-api.herokuapp.com/:splat  200
+/api/*  https://tr4v8w1ka4.execute-api.us-east-2.amazonaws.com/production/:splat  200
+
