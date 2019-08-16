@@ -12,6 +12,7 @@
     "envify": "^4.1.0",
     "highlight.js": "^9.15.8",
     "hui": "^1.2.5",
+    "nanoassert": "^2.0.0",
     "vhs-tape": "^1.6.1"
   },
   "devDependencies": {
