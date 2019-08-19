@@ -7,16 +7,16 @@
     "url": "https://github.com/bcomnes/gumcast-client/issues"
   },
   "dependencies": {
-    "csjs": "^1.1.0",
-    "csjs-injectify": "^1.0.1",
+    "csjs2": "^2.0.0",
+    "csjs2-injectify": "^2.0.2",
     "envify": "^4.1.0",
     "highlight.js": "^9.15.8",
-    "hui": "^1.2.5",
-    "nanoassert": "^2.0.0",
-    "vhs-tape": "^1.6.1"
+    "hui": "^1.2.5"
   },
   "devDependencies": {
     "@tap-format/spec": "^0.2.0",
+    "nanoassert": "^2.0.0",
+    "vhs-tape": "^3.2.0",
     "autoprefixer": "^9.0   .0",
     "browserify": "^16.0.0",
     "budo": "^11.0.0",
@@ -41,7 +41,7 @@
   "browserify": {
     "transform": [
       "envify",
-      "csjs-injectify"
+      "csjs2-injectify"
     ]
   },
   "homepage": "https://github.com/bcomnes/gumcast-client",

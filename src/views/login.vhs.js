@@ -7,6 +7,6 @@ vhs('login component mounts', async t => {
       t.pass(tokenBundle, 'got a tokenBundle')
     }
   })
-
-  await t.appendChild(login.elemnet)
+  console.log(login.element)
+  await t.appendChild(login.element)
 })

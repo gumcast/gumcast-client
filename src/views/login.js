@@ -1,7 +1,13 @@
 const Component = require('hui')
 const html = require('hui/html')
-const css = require('csjs')
+const css = require('csjs2')
 const assert = require('nanoassert')
+
+const styles = css`
+  .green {
+    color: green;
+  }
+`
 
 module.exports = class LoginForm extends Component {
   constructor ({ onlogin } = {}) {
@@ -18,7 +24,7 @@ module.exports = class LoginForm extends Component {
   createElement () {
     return html`
         <form>
-          <label for="username">Username</label>
+          <label class="${styles.green}" for="username">Username</label>
           <input id="username">
           <label for="password">Password</label>
           <input type="password" id="password">
