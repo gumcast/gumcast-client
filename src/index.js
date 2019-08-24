@@ -8,6 +8,10 @@ const opts = Object.assign({
   apiUrl: process.env.GUMCAST_API_URL
 })
 
+const styles = css`
+  .app-container: {}
+`
+
 class App extends Component {
   constructor ({ apiUrl } = {}) {
     super()
@@ -22,27 +26,6 @@ class App extends Component {
     return html`<div>
       ${this._view}
     </div>`
-  }
-
-  _loadingView () {
-    return {
-      element: html`<div>
-        Hey whats poppin
-    </div>`
-    }
-  }
-
-  _loginView () {
-    return new Component({
-      createElement () {
-        return html`<form>
-          <label for="username">Username</label>
-          <input id="username">
-          <label for="password">Password</label>
-          <input type="password" id="password">
-        </form>`
-      }
-    })
   }
 }
 

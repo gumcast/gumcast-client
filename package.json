@@ -7,6 +7,7 @@
     "url": "https://github.com/bcomnes/gumcast-client/issues"
   },
   "dependencies": {
+    "bent": "^6.0.3",
     "csjs2": "^2.0.0",
     "csjs2-injectify": "^2.0.2",
     "envify": "^4.1.0",
