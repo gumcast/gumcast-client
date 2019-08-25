@@ -1,51 +1,61 @@
-const Component = require('hui')
-const html = require('hui/html')
-const css = require('csjs')
+const { define, html, render, ref } = require('heresy')
 
-const opts = Object.assign({
-  apiUrl: 'https://gumcast.com/api/'
-}, {
-  apiUrl: process.env.GUMCAST_API_URL
-})
-
-class App extends Component {
-  constructor ({ apiUrl } = {}) {
-    super()
-
-    this._apiUrl = apiUrl
-
-    this._view = this._loginView().element
-    this._targetView = null
-  }
-
-  createElement () {
-    return html`<div>
-      ${this._view}
-    </div>`
-  }
-
-  _loadingView () {
-    return {
-      element: html`<div>
-        Hey whats poppin
-    </div>`
-    }
-  }
-
-  _loginView () {
-    return new Component({
-      createElement () {
-        return html`<form>
-          <label for="username">Username</label>
-          <input id="username">
-          <label for="password">Password</label>
-          <input type="password" id="password">
-        </form>`
-      }
-    })
+const LoginForm = {
+  extends: 'form',
+  name: 'LoginForm',
+  oninit () {
+    this.addEventListener('submit', this)
+  },
+  render () {
+    return this.html`
+      <fieldset>
+        <legend>Log in</legend>
+        <label for="username">Username:</label>
+        <input type="text" name="username" />
+        <label for="password">Password:</label>
+        <input type="password" name="password">
+        <input type="submit">
+      </fieldset>`
+  },
+  reset () {
+    this.submit.disabled = false
+    this.username.disabled = false
+    this.password.disabled = false
+  },
+  disable () {
+    this.submit.disabled = true
+    this.username.disabled = true
+    this.password.disabled = true
+  },
+  onsubmit (ev) {
+    ev.preventDefault()
+    console.log(ev)
+    console.log('form')
   }
 }
 
-const app = new App(opts)
+const gumcastClient = {
+  extends: 'element',
+  name: 'GumcastClient',
+  state: {
+    session: null
+  },
+  includes: { LoginForm },
+  onsubmit (ev) {
+    ev.preventDefault()
+    console.log(ev)
+    console.log('client')
+  },
 
-document.querySelector('#app-container').appendChild(app.element)
+  oninit () {},
+
+  render () {
+    return this.html`
+      <LoginForm onsubmit=${this}/>
+    `
+  }
+}
+
+define(gumcastClient)
+
+render(document.querySelector('#app-container'), html`<GumcastClient />`)

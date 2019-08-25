@@ -3,9 +3,18 @@
 <head>
   <title>Gumcast</title>
   <link rel="stylesheet" href="/bundle.css">
+  <script>
+if(this.customElements)
+  try{customElements.define('built-in',document.createElement('p').constructor,{'extends':'p'})}
+  catch(s){document.write('<script src="//unpkg.com/@ungap/custom-elements-builtin"><\x2fscript>')}
+else
+  document.write('<script src="//unpkg.com/document-register-element"><\x2fscript>');
+</script>
 </head>
 <body>
-  <div id="app-container"></div>
-  <script src="/bundle.js"></script>
+  <div id="app-container">
+    <li is="item-heresy">hello world</li>
+  </div>
+  <script src="/bundle.js" defer></script>
 </body>
 </html>
