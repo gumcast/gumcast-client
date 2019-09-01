@@ -1,36 +1,80 @@
 const { define, html, render, ref } = require('heresy')
+const cfg = require('./config')
+const bent = require('bent')
+const CustomEvent = require('@ungap/custom-event')
+const state = require('./state')('gumcast', {
+  defaults: {
+    tokens: [],
+    currentUser: null
+  }
+})
+
+window.state = state
 
 const LoginForm = {
   extends: 'form',
   name: 'LoginForm',
   oninit () {
     this.addEventListener('submit', this)
+    this.fieldSet = ref()
+  },
+  get error () {
+    return this._error
+  },
+  set error (err) {
+    this._error = err
+    this.render()
   },
   render () {
     return this.html`
-      <fieldset>
+      <fieldset ref=${this.fieldSet}>
         <legend>Log in</legend>
-        <label for="username">Username:</label>
+        <p>Log into your Gumroad account</p>
+        <label for="username">Email:</label>
         <input type="text" name="username" />
         <label for="password">Password:</label>
         <input type="password" name="password">
-        <input type="submit">
+        <input name="submit-button" type="submit">
+        ${this.error && html`<div>${this.error.message}</div>`}
       </fieldset>`
-  },
-  reset () {
-    this.submit.disabled = false
-    this.username.disabled = false
-    this.password.disabled = false
-  },
-  disable () {
-    this.submit.disabled = true
-    this.username.disabled = true
-    this.password.disabled = true
   },
   onsubmit (ev) {
     ev.preventDefault()
-    console.log(ev)
-    console.log('form')
+    this.error = null
+    this.fieldSet.current.disabled = true
+
+    const passwordBundle = {
+      password: this.password.value.trim(),
+      username: this.username.value.trim()
+    }
+    setTimeout(() => {
+      this.handleSubmit(passwordBundle).then((tokenBundle) => {
+        this.fieldSet.current.disabled = false
+        const loginEvent = new CustomEvent('login', { detail: {
+          tokenBundle,
+          username: passwordBundle.username
+        } })
+        this.dispatchEvent(loginEvent)
+      }).catch(err => {
+        this.fieldSet.current.disabled = false
+        this.error = err
+      })
+    }, 10000)
+  },
+  handleSubmit (passwordBundle) {
+    const post = bent(cfg.api, 'POST', 'json', 200)
+    return post('/login', passwordBundle)
+  }
+}
+
+const ProductView = {
+  extends: 'element',
+  name: 'ProductView',
+  render () {
+    return this.html`<div>
+      <p>logged in as ${this.currentUser}</p>
+      <button>Logout</button>
+    </div>`
   }
 }
 
@@ -40,19 +84,30 @@ const gumcastClient = {
   state: {
     session: null
   },
-  includes: { LoginForm },
-  onsubmit (ev) {
-    ev.preventDefault()
-    console.log(ev)
-    console.log('client')
-  },
-
-  oninit () {},
-
+  includes: { LoginForm, ProductView },
+  oninit (ev) {},
   render () {
-    return this.html`
-      <LoginForm onsubmit=${this}/>
-    `
+    const currentUser = state.currentUser
+    const token = state.tokens[currentUser]
+    if (state.currentUser && state.tokens[state.currentUser]) {
+      return this.html`<ProductView .token="${token}" .currentUser="${currentUser}"/>`
+    } else {
+      return this.html`<LoginForm onlogin="${this}" />`
+    }
+  },
+  onlogin (ev) {
+    const {
+      tokenBundle,
+      username
+    } = ev.detail
+    state.currentUser = username
+    state.tokens[username] = tokenBundle
+    debugger
+    this.render()
+  },
+  onlogout (ev) {
+    this.creds = null
+    this.render()
   }
 }
 
