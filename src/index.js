@@ -2,7 +2,7 @@ const { define, html, render, ref } = require('heresy')
 const cfg = require('./config')
 const bent = require('bent')
 const CustomEvent = require('@ungap/custom-event')
-const state = require('./state')('gumcast', {
+const state = require('local-storage-proxy')('gumcast', {
   defaults: {
     tokens: [],
     currentUser: null
@@ -47,19 +47,18 @@ const LoginForm = {
       password: this.password.value.trim(),
       username: this.username.value.trim()
     }
-    setTimeout(() => {
-      this.handleSubmit(passwordBundle).then((tokenBundle) => {
-        this.fieldSet.current.disabled = false
-        const loginEvent = new CustomEvent('login', { detail: {
-          tokenBundle,
-          username: passwordBundle.username
-        } })
-        this.dispatchEvent(loginEvent)
-      }).catch(err => {
-        this.fieldSet.current.disabled = false
-        this.error = err
-      })
-    }, 10000)
+
+    this.handleSubmit(passwordBundle).then((tokenBundle) => {
+      this.fieldSet.current.disabled = false
+      const loginEvent = new CustomEvent('login', { detail: {
+        tokenBundle,
+        username: passwordBundle.username
+      } })
+      this.dispatchEvent(loginEvent)
+    }).catch(err => {
+      this.fieldSet.current.disabled = false
+      this.error = err
+    })
   },
   handleSubmit (passwordBundle) {
     const post = bent(cfg.api, 'POST', 'json', 200)
@@ -70,11 +69,23 @@ const LoginForm = {
 const ProductView = {
   extends: 'element',
   name: 'ProductView',
+  oninit (ev) {
+    this.logoutButton = ref()
+  },
   render () {
     return this.html`<div>
       <p>logged in as ${this.currentUser}</p>
-      <button>Logout</button>
+      <button ref="${this.logoutButton}">Logout</button>
     </div>`
+  },
+  onclick (ev) {
+    const { logoutButton } = this
+    const { currentTarget } = ev
+    switch (currentTarget) {
+      case logoutButton.current: {
+        state.currentUser = null
+      }
+    }
   }
 }
 
@@ -90,7 +101,10 @@ const gumcastClient = {
     const currentUser = state.currentUser
     const token = state.tokens[currentUser]
     if (state.currentUser && state.tokens[state.currentUser]) {
-      return this.html`<ProductView .token="${token}" .currentUser="${currentUser}"/>`
+      return this.html`<ProductView
+                            onlogout="${this}"
+                            .token="${token}"
+                            .currentUser="${currentUser}"/>`
     } else {
       return this.html`<LoginForm onlogin="${this}" />`
     }
@@ -102,7 +116,6 @@ const gumcastClient = {
     } = ev.detail
     state.currentUser = username
     state.tokens[username] = tokenBundle
-    debugger
     this.render()
   },
   onlogout (ev) {
