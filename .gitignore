@@ -1,3 +1,4 @@
 node_modules
 sandbox.js
-dist
+.nyc_output
+public
