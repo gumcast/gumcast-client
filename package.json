@@ -1,72 +1,50 @@
 {
-  "name": "gumcast-client",
-  "description": "Subscribe to gumroad products as podcasts",
+  "name": "gumcast-client-2",
+  "description": "WIP - nothing to see here",
   "version": "0.0.0",
+  "private": true,
   "author": "Bret Comnes <bcomnes@gmail.com> (https://bret.io)",
   "bugs": {
-    "url": "https://github.com/bcomnes/gumcast-client/issues"
+    "url": "https://github.com/bcomnes/gumcast-client-2/issues"
   },
-  "dependencies": {
-    "bent": "^6.0.3",
-    "csjs2": "^2.0.0",
-    "csjs2-injectify": "^2.0.2",
-    "envify": "^4.1.0",
-    "highlight.js": "^9.15.8",
-    "hui": "^1.2.5"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "@tap-format/spec": "^0.2.0",
-    "nanoassert": "^2.0.0",
-    "vhs-tape": "^3.2.0",
-    "autoprefixer": "^9.0   .0",
-    "browserify": "^16.0.0",
-    "budo": "^11.0.0",
+    "auto-changelog": "^1.16.2",
+    "browser-sync": "^2.26.7",
     "cpx2": "^2.0.0",
-    "dependency-check": "^3.0.0",
-    "exorcist": "^1.0.0",
-    "mkdirp": "^0.5.1",
-    "npm-run-all": "^4.0.0",
-    "postcss": "^7.0.0",
-    "postcss-browser-reporter": "^0.6.0",
-    "postcss-cli": "^6.0.0",
-    "postcss-import": "^12.0.0",
-    "postcss-nesting": "^7.0.0",
-    "postcss-reporter": "^6.0.0",
-    "postcss-url": "^8.0.0",
-    "rimraf": "^2.5.4",
-    "snazzy": "^8.0.0",
-    "standard": "^13.0.1",
-    "tape": "^4.6.2",
-    "tape-promise": "^4.0.0"
+    "dependency-check": "^4.1.0",
+    "gh-release": "^3.5.0",
+    "mkdirp": "^1.0.4",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2",
+    "standard": "^13.1.0",
+    "tap": "^14.10.2"
   },
-  "browserify": {
-    "transform": [
-      "envify",
-      "csjs2-injectify"
-    ]
-  },
-  "homepage": "https://github.com/bcomnes/gumcast-client",
+  "homepage": "https://github.com/bcomnes/gumcast-client-2",
   "keywords": [],
   "license": "MIT",
-  "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bcomnes/gumcast-client.git"
+    "url": "https://github.com/bcomnes/gumcast-client-2.git"
   },
   "scripts": {
+    "prepublishOnly": "git push --follow-tags && gh-release",
     "test": "run-s test:*",
     "test:deps": "dependency-check . --no-dev --no-peer",
     "test:standard": "standard",
-    "test:tape": "tape test.js",
+    "test-skip:tap": "tap",
+    "start": "run-s watch",
+    "version": "auto-changelog -p --template keepachangelog auto-changelog --breaking-pattern 'BREAKING CHANGE:' && git add CHANGELOG.md",
     "build": "npm run clean && run-p build:*",
-    "build:css": "postcss src/index.css -o dist/bundle.css",
-    "build:js": "browserify src/index.js --debug | exorcist dist/bundle.js.map > dist/bundle.js",
-    "build:static": "cpx 'src/**/*{.png,.svg,.jpg,.jpeg,.pdf,.mp4,.mp3,_redirects,.html}' dist",
+    "build:static": "cpx 'src/**/*' public",
     "watch": "npm run clean && run-p watch:* build:static",
-    "watch:css": "run-s 'build:css -- --watch'",
-    "watch:js": "budo src/index.js:bundle.js --dir dist --live --open",
     "watch:static": "npm run build:static -- --watch",
-    "clean": "rimraf dist && mkdirp dist",
-    "start": "npm run watch"
+    "watch:serve": "browser-sync start --server 'public' --files 'public'",
+    "clean": "rimraf public && mkdirp public"
+  },
+  "standard": {
+    "ignore": [
+      "dist"
+    ]
   }
 }
