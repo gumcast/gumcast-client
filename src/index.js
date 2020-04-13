@@ -6,6 +6,7 @@ route()
 const fetch = window.fetch
 
 const loginForm = document.querySelector('#login-form')
+const errorBox = document.querySelector('.error-box')
 
 loginForm.addEventListener('submit', async (ev) => {
   ev.preventDefault()
@@ -43,5 +44,11 @@ loginForm.addEventListener('submit', async (ev) => {
   } catch (e) {
     console.error(e)
     fieldSet.disabled = false
+    if (e.res.status === 401) {
+      errorBox.innerText = '401: Incorrect credentials'
+    } else {
+      const body = await e.res.json()
+      errorBox.innerText = `${e.res.status}: ${body.error_description || body.error || e.message}`
+    }
   }
 })
