@@ -1,0 +1,32 @@
+@import '/styles/global.css';
+
+.logo-header {
+  display: grid;
+  justify-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.logo-header h1 {
+  margin: 0px;
+}
+
+.login-form {
+  display: grid;
+  justify-content: center;
+}
+
+.login-form fieldset {
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 2px;
+}
+
+.login-form label {
+  display: inline-block;
+  width: 90px;
+  text-align: right;
+}
+
+.login-form .button-cluster {
+  display: grid;
+}

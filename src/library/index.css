@@ -1,0 +1,42 @@
+@import '/styles/global.css';
+
+ul.products,
+ul.products li,
+ul.products li ul {
+  margin:0;
+  padding: 0;
+  text-indent: 0;
+  list-style-type: none;
+}
+
+
+ul.products {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  column-gap: 10px;
+  row-gap: 15px;
+  justify-items: stretch;
+  overflow: hidden;
+}
+
+.products .title {
+  margin-bottom: 0.2em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.products .image {
+  max-width: 100%;
+  height: 369px;
+}
+
+@media screen and (max-width: 45em) {
+  ul.products {
+    grid-template-columns: 100%;
+  }
+
+  .products .title {
+    width: 100%;
+  }
+}

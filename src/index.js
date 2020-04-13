@@ -1,5 +1,5 @@
 import { route } from '/scripts/router.js'
-import { state } from '/scripts/login-state.js'
+import { state } from '/scripts/state.js'
 
 route()
 
@@ -20,7 +20,7 @@ loginForm.addEventListener('submit', async (ev) => {
   }
 
   try {
-    const res = await fetch('https://gumcast.com/api/login', {
+    const res = await fetch(`${state.apiUrl}/login`, {
       method: 'post',
       headers: {
         'Content-type': 'application/json'
