@@ -72,7 +72,7 @@ async function populateProducts () {
               </h5>
               <div class="image" style="background: url(${item.preview_url}); background-repeat: no-repeat; background-size: cover; background-position: center;"></div>
               <div class="feed-line">
-                <img height="24" src="/static/atom.svg" />
+                <a href="${feedURL}"><img height="38" src="/static/atom.svg" /></a>
                 <div><input class="feed-select" onclick="this.select();" id="rss-feed-url-${item.purchase_id}" type="text" readonly value="${feedURL}"></input></div>
                 <div class="feed-copy-button"><button onclick=${async (ev) => {
                     const target = ev.target

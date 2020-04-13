@@ -27,3 +27,18 @@
       padding-bottom: env(safe-area-inset-bottom);
   }
 }
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  border-radius: 3px;
+  border-style: solid;
+  border-color: rgb(192, 192, 192);
+}
+
+input {
+  font-size: 20px;
+  padding: 8px;
+  margin-bottom: 5px;
+}
+
