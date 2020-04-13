@@ -30,7 +30,6 @@
   "scripts": {
     "prepublishOnly": "git push --follow-tags && gh-release",
     "test": "run-s test:*",
-    "test:deps": "dependency-check . --no-dev --no-peer",
     "test:standard": "standard",
     "test-skip:tap": "tap",
     "start": "run-s watch",

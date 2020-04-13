@@ -1,5 +1,5 @@
-import { route } from '/scripts/router.js'
-import { state } from '/scripts/state.js'
+import { route } from '/scripts/router.js' /* eslint-disable-line import/no-absolute-path */
+import { state } from '/scripts/state.js' /* eslint-disable-line import/no-absolute-path */
 const fetch = window.fetch
 
 route()
@@ -28,9 +28,9 @@ async function populateJSONFeed () {
   const titleEl = document.querySelector('.product-name')
 
   const params = new URLSearchParams(window.location.search)
-  const purchase_id = params.get('purchase_id')
+  const purchaseId = params.get('purchase_id')
 
-  if (!purchase_id) {
+  if (!purchaseId) {
     jsonEl.innerText = 'missing required purchase_id search param'
   }
 
@@ -39,7 +39,7 @@ async function populateJSONFeed () {
   const reqParams = new URLSearchParams({
     access_token: tokenBundle.access_token,
     refresh_token: tokenBundle.refresh_token,
-    purchase_id
+    purchase_id: purchaseId
   })
 
   try {
@@ -70,9 +70,9 @@ async function populateRSSFeed () {
   const rssEl = document.querySelector('.rss-feed')
 
   const params = new URLSearchParams(window.location.search)
-  const purchase_id = params.get('purchase_id')
+  const purchaseId = params.get('purchase_id')
 
-  if (!purchase_id) {
+  if (!purchaseId) {
     rssEl.innerText = 'missing required purchase_id search param'
   }
 
@@ -81,7 +81,7 @@ async function populateRSSFeed () {
   const reqParams = new URLSearchParams({
     access_token: tokenBundle.access_token,
     refresh_token: tokenBundle.refresh_token,
-    purchase_id
+    purchase_id: purchaseId
   })
 
   try {

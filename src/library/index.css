@@ -12,8 +12,8 @@ ul.products li ul {
 
 ul.products {
   display: grid;
-  grid-template-columns: 50% 50%;
-  column-gap: 10px;
+  grid-template-columns: 49.5% 49.5%;
+  column-gap: 1%;
   row-gap: 15px;
   justify-items: stretch;
   overflow: hidden;
@@ -39,4 +39,20 @@ ul.products {
   .products .title {
     width: 100%;
   }
+}
+
+.podcast-button, .feed-line {
+  margin-top: .75em;
+}
+
+.feed-line {
+  display: grid;
+  grid-template-columns: fit-content(100px) auto fit-content(100px);
+  column-gap: 5px;
+  align-items: center;
+}
+
+.feed-line .feed-select {
+  width: 100%;
+  font-size: 15px;
 }
