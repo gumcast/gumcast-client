@@ -78,7 +78,7 @@ async function populateProducts () {
                     const target = ev.target
                     try {
                       await navigator.clipboard.writeText(document.getElementById(`rss-feed-url-${item.purchase_id}`).value)
-                      target.innerText = 'Copied'``
+                      target.innerText = 'Copied'
                       console.log('copied feed to clipboard')
                     } catch (e) {
                       console.error(e)
