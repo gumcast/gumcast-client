@@ -4,7 +4,8 @@ export const state = localStorageProxy('gumcast', {
   defaults: {
     tokens: {},
     currentUser: null,
-    apiUrl: 'https://api.gumcast.com'
+    apiUrl: 'https://api.gumcast.com',
+    proxyFiles: 'redirect'
   }
 })
 

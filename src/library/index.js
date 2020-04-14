@@ -58,7 +58,7 @@ async function populateProducts () {
             purchase_id: item.purchase_id,
             access_token: tokenBundle.access_token,
             refresh_token: tokenBundle.refresh_token,
-            proxyFiles: true
+            proxyFiles: state.proxyFiles
           })
 
           const feedURL = `${state.apiUrl}/feed.rss?${feedParams.toString()}`
