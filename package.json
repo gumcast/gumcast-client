@@ -1,11 +1,10 @@
 {
-  "name": "gumcast-client-2",
-  "description": "WIP - nothing to see here",
+  "name": "gumcast-client",
+  "description": "Web app frontend for Gumcast.com",
   "version": "0.0.0",
   "private": true,
-  "author": "Bret Comnes <bcomnes@gmail.com> (https://bret.io)",
   "bugs": {
-    "url": "https://github.com/bcomnes/gumcast-client-2/issues"
+    "url": "https://github.com/gumcast/gumcast-client/issues"
   },
   "dependencies": {},
   "devDependencies": {
@@ -20,12 +19,12 @@
     "standard": "^14.0.0",
     "tap": "^14.10.2"
   },
-  "homepage": "https://github.com/bcomnes/gumcast-client-2",
+  "homepage": "https://github.com/gumcast/gumcast-client",
   "keywords": [],
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bcomnes/gumcast-client-2.git"
+    "url": "https://github.com/gumcast/gumcast-client.git"
   },
   "scripts": {
     "prepublishOnly": "git push --follow-tags && gh-release",

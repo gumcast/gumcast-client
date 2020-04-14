@@ -1,16 +1,17 @@
-# gumcast-client-2
-[![Actions Status](https://github.com/bcomnes/gumcast-client-2/workflows/tests/badge.svg)](https://github.com/bcomnes/gumcast-client-2/actions)
+# gumcast-client
+[![Actions Status](https://github.com/gumcast/gumcast-client/workflows/tests/badge.svg)](https://github.com/gumcast/gumcast-client/actions)
 
-WIP - nothing to see here
+Web app frontend for http://gumcast.com.
 
-```
-npm install gumcast-client-2
-```
+## Develop
 
-## Usage
+To run locally, run the following:
 
-``` js
-const gumcast-client-2 = require('gumcast-client-2')
+```console
+git clone https://github.com/gumcast/gumcast-client.git
+cd gumcast-client
+npm install
+npm start
 ```
 
 ## License
