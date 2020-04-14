@@ -21,12 +21,6 @@
   border-width: 2px;
 }
 
-.login-form label {
-  display: inline-block;
-  width: 90px;
-  text-align: right;
-}
-
 .login-form .button-cluster {
   display: grid;
 }

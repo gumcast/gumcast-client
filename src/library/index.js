@@ -50,8 +50,6 @@ async function populateProducts () {
     const body = await res.json()
     const list = body.products
 
-    console.log(body)
-    console.log(body)
     const productEl = document.querySelector('#products')
     render(
       productEl, html.for(productEl)`${
@@ -72,12 +70,13 @@ async function populateProducts () {
               </h5>
               <div class="image" style="background: url(${item.preview_url}); background-repeat: no-repeat; background-size: cover; background-position: center;"></div>
               <div class="feed-line">
-                <a href="${feedURL}"><img height="38" src="/static/atom.svg" /></a>
+                <a class="feed-link" href="${feedURL}"><img height="38" src="/static/atom.svg" /></a>
                 <div><input class="feed-select" onclick="this.select();" id="rss-feed-url-${item.purchase_id}" type="text" readonly value="${feedURL}"></input></div>
                 <div class="feed-copy-button"><button onclick=${async (ev) => {
                     const target = ev.target
+                    const value = document.getElementById(`rss-feed-url-${item.purchase_id}`).value
                     try {
-                      await navigator.clipboard.writeText(document.getElementById(`rss-feed-url-${item.purchase_id}`).value)
+                      await navigator.clipboard.writeText(value)
                       target.innerText = 'Copied'
                       console.log('copied feed to clipboard')
                     } catch (e) {
