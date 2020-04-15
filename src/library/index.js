@@ -53,7 +53,7 @@ async function populateProducts () {
     const productEl = document.querySelector('#products')
     render(
       productEl, html.for(productEl)`${
-        list.map(item => {
+        list.reverse().map(item => {
           const feedParams = new URLSearchParams({
             purchase_id: item.purchase_id,
             access_token: tokenBundle.access_token,
@@ -92,5 +92,7 @@ async function populateProducts () {
     )
   } catch (e) {
     console.error(e)
+    const productEl = document.querySelector('#products')
+    render(productEl, html.for(productEl)`Error: ${e.message}`)
   }
 }
