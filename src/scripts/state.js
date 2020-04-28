@@ -1,6 +1,6 @@
-import { localStorageProxy } from './lsp.js'
+import lsp from 'https://unpkg.com/local-storage-proxy@^2?module'
 
-export const state = localStorageProxy('gumcast', {
+export const state = lsp('gumcast', {
   defaults: {
     tokens: {},
     currentUser: null,
