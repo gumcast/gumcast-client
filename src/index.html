@@ -83,7 +83,7 @@
         <dd>No, this is an independent, third party, stateless application that uses Gumroad's content API to generate Podcast RSS feeds that can be subscribed to in a podcast app like Apple Podcasts.app.</dd>
 
         <dt>Does this service mirror my Gumroad content?</dt>
-        <dd>No, all content is still stored and managed on Gumroad.  No copies of Gumroad is stored by this service.  Gumcast proxies download links because Gumroad provides short lived download links and needs to generate a new link behind the scene when your podcast app requests a file.</dd>
+        <dd>No, all content is still stored and managed on Gumroad.  No copies of Gumroad is stored by this service.  Gumcast proxies various download links to provide a long lived URL for files, however a <a href="https://en.wikipedia.org/wiki/HTTP_302">302 redirect</a> is used to provide unproxied file downloads directly from Gumroad.</dd>
 
         <dt>Someone is sharing a Gumcast feed with lots of people. Can you make them stop?</dt>
         <dd>This is the same situation with Gumroad account sharing.  If you identify an account that is being shared with many people, work with Gumroad customer support to come to a resolution with the account owner in question.</dd>
@@ -95,9 +95,7 @@
         <dd>No! All your customers need to do is log in with their own Gumroad account that has access to a purchase of your product at Gumcast and they can generate their personalized podcast feed for their individual subscription.</dd>
 
         <dt>Can I stream large video/files with Gumcast?</dt>
-        <dd><p>Right now, no.  File content unfortunately has to be proxied through the web app so please don't stream large video through Gumcast. Please download video content in advance and watch a local copy.</p>
-
-          <p>In the future, Gumroad may provide longer lived download URLs which will allow for unproxied content downloads.</p>
+        <dd><p>Possibly, depending on how fast Gumroad is serving files that day.</p>
         </dd>
 
         <dt>The Gumcast website isn't working in my old browser/phone!</dt>
