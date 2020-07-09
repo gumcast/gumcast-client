@@ -70,6 +70,7 @@
         </linearGradient>
     </defs>
     <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill="#FFFFFF" opacity="0" x="0" y="0" width="256" height="256"></rect>
         <g id="no-text" transform="translate(-63.000000, 2.000000)">
             <g id="Logo" transform="translate(80.040984, 0.439024)">
                 <g id="atom" transform="translate(121.967213, 0.000000)" fill-rule="nonzero">

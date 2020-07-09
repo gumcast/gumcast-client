@@ -1,0 +1,13 @@
+
+{
+    "manifest_version": 2,
+    "name": "Gumcast RSS Feed Podcast Generator",
+    "short_name": "Gumcast",
+    "icons": [{
+        "src": "/static/google-touch-icon-512x512.png",
+        "sizes": "512x512"
+    }],
+    "background_color": "#ee802f",
+    "theme_color": "#ee802f",
+    "display": "fullscreen"
+}
