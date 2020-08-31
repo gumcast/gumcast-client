@@ -1,5 +1,10 @@
-@import "https://unpkg.com/mine.css@^2/dist/style.css";
-@import "https://unpkg.com/mine.css@^2/dist/layout.css";
+@import "https://unpkg.com/mine.css@^4.1.1";
+@import "https://unpkg.com/mine.css@^4.1.1/dist/layout.css";
+
+footer {
+  text-align: center;
+  margin: 3rem auto;
+}
 
 .header-nav {
   display: grid;
@@ -12,7 +17,6 @@
 
 .auth-buttons {
   justify-self: end;
-
 }
 
 .auth-buttons > * {
