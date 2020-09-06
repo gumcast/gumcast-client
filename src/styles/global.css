@@ -1,5 +1,5 @@
-@import "https://unpkg.com/mine.css@^4.1.1";
-@import "https://unpkg.com/mine.css@^4.1.1/dist/layout.css";
+@import "https://unpkg.com/mine.css@^4.2.1";
+@import "https://unpkg.com/mine.css@^4.2.1/dist/layout.css";
 
 footer {
   text-align: center;
@@ -30,14 +30,6 @@ footer {
       padding-right: env(safe-area-inset-right);
       padding-bottom: env(safe-area-inset-bottom);
   }
-}
-
-input[type="text"],
-input[type="password"],
-input[type="email"] {
-  border-radius: 3px;
-  border-style: solid;
-  border-color: rgb(192, 192, 192);
 }
 
 input {
