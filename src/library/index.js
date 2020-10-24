@@ -1,6 +1,7 @@
 import { route } from '../scripts/router.js'
 import { state } from '../scripts/state.js'
 import '../scripts/theme-switcher.js'
+import '../scripts/debug.js'
 import { render, html } from 'https://unpkg.com/lighterhtml@^3?module'
 
 const fetch = window.fetch
