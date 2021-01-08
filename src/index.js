@@ -1,6 +1,5 @@
 import { route } from './scripts/router.js'
 import { state } from './scripts/state.js'
-import './scripts/debug.js'
 import './scripts/theme-switcher.js'
 
 route()
