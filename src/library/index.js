@@ -2,7 +2,7 @@ import { route } from '../scripts/router.js'
 import { state } from '../scripts/state.js'
 import '../scripts/theme-switcher.js'
 import '../scripts/debug.js'
-import { render, html } from 'https://unpkg.com/lighterhtml@^3?module'
+import { render, html } from 'https://unpkg.com/uhtml@^2?module'
 
 const fetch = window.fetch
 
@@ -67,12 +67,12 @@ async function populateProducts () {
           return html.for(item, productEl.id)`
             <li>
               <h5 class="title">
-                <a href="https://gumroad.com/l/${item.unique_permalink}">${item.name}</a>
+                <a href="${'https://gumroad.com/l/' + item.unique_permalink}">${item.name}</a>
               </h5>
-              <div class="image" style="background: url(${item.preview_url}); background-repeat: no-repeat; background-size: cover; background-position: center;"></div>
+              <div class="image" style="${`background: url(${item.preview_url}); background-repeat: no-repeat; background-size: cover; background-position: center;`}"></div>
               <div class="feed-line">
                 <a class="feed-link" href="${feedURL}"><img height="38" src="/static/atom.svg" /></a>
-                <div><input class="feed-select" onclick="this.select();" id="rss-feed-url-${item.purchase_id}" type="text" readonly value="${feedURL}"></input></div>
+                <div><input class="feed-select" onclick="this.select();" id="${'rss-feed-url-' + item.purchase_id}" type="text" readonly value="${feedURL}"></input></div>
                 <div class="feed-copy-button"><button onclick=${async (ev) => {
                     const target = ev.target
                     const value = document.getElementById(`rss-feed-url-${item.purchase_id}`).value
