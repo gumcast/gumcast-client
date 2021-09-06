@@ -1,5 +1,5 @@
-@import "https://unpkg.com/mine.css@^4.2.1/dist/mine.css";
-@import "https://unpkg.com/mine.css@^4.2.1/dist/layout.css";
+@import "mine.css";
+@import "mine.css/dist/layout.css";
 
 footer {
   text-align: center;

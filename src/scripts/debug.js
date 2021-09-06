@@ -1,4 +1,4 @@
-import { datadogRum } from 'https://unpkg.com/@datadog/browser-rum@^1?module'
+import { datadogRum } from '@datadog/browser-rum'
 
 datadogRum.init({
   applicationId: 'f2f7d17e-fea3-4b75-9038-2c4cd34d61eb',
