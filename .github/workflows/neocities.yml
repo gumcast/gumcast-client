@@ -6,7 +6,7 @@ on:
       - master
 
 env:
-  node-version: lfs/*
+  node-version: lts/*
 
 jobs:
   deploy:
