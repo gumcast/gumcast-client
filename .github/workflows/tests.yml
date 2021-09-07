@@ -9,17 +9,13 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        node: [12]
+        node: [lfs/*]
 
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node }}
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node }}
-    - name: npm install && npm test
-      run: |
-        npm i
-        npm test
-      env:
-        CI: true
+    - run: npm i
+    - run: npm test

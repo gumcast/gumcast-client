@@ -5,6 +5,9 @@ on:
     branches:
       - master
 
+env:
+  node-version: lfs/*
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -14,17 +17,13 @@ jobs:
       with:
         lfs: true
     - name: Use Node.js
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v2
       with:
-        node-version: 12
-    - name: npm install and build
-      run: |
-        npm i
-        npm run build
-      env:
-        CI: true
+        node-version: ${{ env.node-version }}
+    - run: npm i
+    - run: npm run build
     - name: Create deployment
-      uses: bobheadxi/deployments@v0.2.0
+      uses: bobheadxi/deployments@v0.6.0
       id: deployment
       with:
         step: start
@@ -36,7 +35,7 @@ jobs:
         api_token: ${{ secrets.NEOCITIES_API_TOKEN }}
         cleanup: false
     - name: Finish deployment
-      uses: bobheadxi/deployments@v0.2.0
+      uses: bobheadxi/deployments@v0.6.0
       if: always()
       with:
         step: finish
