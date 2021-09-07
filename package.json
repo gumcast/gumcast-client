@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "@bret/siteup": "^0.0.11",
-    "auto-changelog": "^1.16.2",
+    "auto-changelog": "^2.3.0",
     "browser-sync": "^2.26.7",
     "gh-release": "^3.5.0",
     "mkdirp": "^1.0.4",
@@ -49,6 +49,6 @@
     "fetch-undici": "^1.0.3",
     "local-storage-proxy": "^3.0.3",
     "mine.css": "^4.6.1",
-    "uhtml-isomorphic": "^0.0.3"
+    "uhtml-isomorphic": "^1.0.1"
   }
 }
