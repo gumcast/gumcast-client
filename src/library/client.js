@@ -1,8 +1,7 @@
+import { render, html } from 'uhtml-isomorphic'
+import { fetch } from 'fetch-undici'
 import { route } from '../scripts/router.js'
 import { state } from '../scripts/state.js'
-import { render, html } from 'uhtml'
-
-const fetch = window.fetch
 
 route()
 

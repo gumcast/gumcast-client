@@ -1,6 +1,6 @@
+import { fetch } from 'fetch-undici'
 import { route } from '../../scripts/router.js'
 import { state } from '../../scripts/state.js'
-const fetch = window.fetch
 
 route()
 

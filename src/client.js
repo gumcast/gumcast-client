@@ -1,9 +1,9 @@
 import { route } from './scripts/router.js'
 import { state } from './scripts/state.js'
 
-route()
+import { fetch } from 'fetch-undici'
 
-const fetch = window.fetch
+route()
 
 const loginForm = document.querySelector('#login-form')
 const errorBox = document.querySelector('.error-box')
