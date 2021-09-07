@@ -2,16 +2,15 @@
   "name": "gumcast-client",
   "description": "Web app frontend for Gumcast.com",
   "version": "0.0.0",
+  "type": "module",
   "private": true,
   "bugs": {
     "url": "https://github.com/gumcast/gumcast-client/issues"
   },
-  "dependencies": {},
   "devDependencies": {
+    "@bret/siteup": "^0.0.11",
     "auto-changelog": "^1.16.2",
     "browser-sync": "^2.26.7",
-    "cpx2": "^2.0.0",
-    "dependency-check": "^4.1.0",
     "gh-release": "^3.5.0",
     "mkdirp": "^1.0.4",
     "npm-run-all": "^4.1.5",
@@ -34,9 +33,9 @@
     "start": "run-s watch",
     "version": "auto-changelog -p --template keepachangelog auto-changelog --breaking-pattern 'BREAKING CHANGE:' && git add CHANGELOG.md",
     "build": "npm run clean && run-p build:*",
-    "build:static": "cpx 'src/**/*' public",
-    "watch": "npm run clean && run-p watch:* build:static",
-    "watch:static": "npm run build:static -- --watch",
+    "build:siteup": "siteup",
+    "watch": "npm run clean && run-p watch:*",
+    "watch:siteup": "npm run build:siteup -- --watch",
     "watch:serve": "browser-sync start --server 'public' --files 'public'",
     "clean": "rimraf public && mkdirp public"
   },
@@ -44,5 +43,12 @@
     "ignore": [
       "dist"
     ]
+  },
+  "dependencies": {
+    "@datadog/browser-rum": "^3.2.0",
+    "fetch-undici": "^1.0.3",
+    "local-storage-proxy": "^3.0.3",
+    "mine.css": "^4.6.1",
+    "uhtml-isomorphic": "^0.0.3"
   }
 }

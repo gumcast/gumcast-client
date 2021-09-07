@@ -1,10 +1,9 @@
 import { route } from './scripts/router.js'
 import { state } from './scripts/state.js'
-import './scripts/theme-switcher.js'
+
+import { fetch } from 'fetch-undici'
 
 route()
-
-const fetch = window.fetch
 
 const loginForm = document.querySelector('#login-form')
 const errorBox = document.querySelector('.error-box')

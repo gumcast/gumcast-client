@@ -1,4 +1,4 @@
-import lsp from 'https://unpkg.com/local-storage-proxy@^3?module'
+import lsp from 'local-storage-proxy'
 
 export const state = lsp('gumcast', {
   defaults: {

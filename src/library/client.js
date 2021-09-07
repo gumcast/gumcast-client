@@ -1,9 +1,7 @@
+import { render, html } from 'uhtml-isomorphic'
+import { fetch } from 'fetch-undici'
 import { route } from '../scripts/router.js'
 import { state } from '../scripts/state.js'
-import '../scripts/theme-switcher.js'
-import { render, html } from 'https://unpkg.com/uhtml@^2?module'
-
-const fetch = window.fetch
 
 route()
 

@@ -1,6 +1,6 @@
-import { route } from '/scripts/router.js' /* eslint-disable-line import/no-absolute-path */
-import { state } from '/scripts/state.js' /* eslint-disable-line import/no-absolute-path */
-const fetch = window.fetch
+import { fetch } from 'fetch-undici'
+import { route } from '../../scripts/router.js'
+import { state } from '../../scripts/state.js'
 
 route()
 
