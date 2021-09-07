@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "@bret/siteup": "^0.0.11",
-    "auto-changelog": "^1.16.2",
+    "auto-changelog": "^2.3.0",
     "browser-sync": "^2.26.7",
     "gh-release": "^6.0.0",
     "mkdirp": "^1.0.4",
