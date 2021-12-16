@@ -48,7 +48,7 @@
     "@datadog/browser-rum": "^3.2.0",
     "fetch-undici": "^1.0.3",
     "local-storage-proxy": "^3.0.3",
-    "mine.css": "^4.6.1",
+    "mine.css": "^5.0.1",
     "uhtml-isomorphic": "^1.0.1"
   }
 }
