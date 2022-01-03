@@ -82,9 +82,6 @@ async function populateProducts () {
                     }
                   }}>Copy</button></div>
               </div>
-              <div class="podcast-button">
-                <a href="${feedURL}" style="display:inline-block;overflow:hidden;background:url(/static/US_UK_Apple_Podcasts_Listen_Badge_RGB.svg) no-repeat;width:165px;height:40px;"></a>
-              </div>
             </li>`
           })
       }`
