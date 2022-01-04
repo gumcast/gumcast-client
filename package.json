@@ -49,6 +49,6 @@
     "fetch-undici": "^1.0.3",
     "local-storage-proxy": "^3.0.3",
     "mine.css": "^5.0.1",
-    "uhtml-isomorphic": "^1.0.1"
+    "uhtml-isomorphic": "^1.0.2"
   }
 }
