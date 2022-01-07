@@ -12,7 +12,6 @@ export default async function rootLayout ({
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Gumcast</title>
     <title>${title ? `${title} | ` : ''}${siteName}</title>
     <meta name="viewport" content="width=device-width, user-scalable=no" />
     <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
