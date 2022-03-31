@@ -46,7 +46,7 @@
   },
   "dependencies": {
     "@datadog/browser-rum": "^4.0.0",
-    "fetch-undici": "^1.0.3",
+    "fetch-undici": "^2.0.0",
     "local-storage-proxy": "^4.0.2",
     "mine.css": "^5.0.1",
     "uhtml-isomorphic": "^1.0.2"
