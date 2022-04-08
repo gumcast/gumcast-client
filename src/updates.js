@@ -2,6 +2,11 @@ import { html } from 'uhtml-isomorphic'
 
 const data = [
   {
+    date: '2022-04-08',
+    content: `Gumcast remains fully operational. 
+      Since our December 2021 incident, Gumcast added extensive backend monitoring to more quickly detect and fix service interuptions.`
+  },
+  {
     date: '2021-12-27',
     content: `UPDATE: Gumcast acquired an IP address flagged for malware from the free IP pool on Heroku which led to API request rejection from cloudflare.
       After redeploying and acquiring a new IP address, requests began to work again. All issues appear resolved for now.`
