@@ -42,4 +42,5 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         deployment_id: ${{ steps.deployment.outputs.deployment_id }}
         status: ${{ job.status }}
-        env_url: https://gumcast.com
+        env_url: "https://gumcast.com"
+        env: neocities
