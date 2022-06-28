@@ -3,7 +3,7 @@ import { html } from 'uhtml-isomorphic'
 const data = [
   {
     q: 'What is Gumcast?',
-    a: html`<p>Gumcast is a Gumroad RSS feed generator service.  It lets you subscribe to gumcast as a podcast in iTunes and other podcast clients.</p>
+    a: html`<p>Gumcast is a Gumroad RSS feed generator service.  It lets you subscribe to Gumroad products as a podcast in Apple Podcasts and other podcast clients.</p>
       <p>Gumcast is a webapp that lets you generate <a href="https://en.wikipedia.org/wiki/Podcast">podcast</a> RSS feeds for any product in your <a href="https://gumroad.com">Gumroad</a> library. You can use these feeds to "subscribe" to a Gumroad product in your favorite podcast app which provides many benefits:</p>
       <ul>
         <li>Playback state tracking.</li>
