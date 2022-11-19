@@ -4,10 +4,10 @@ export const state = lsp('gumcast', {
   defaults: {
     tokens: {},
     currentUser: null,
-    apiUrl: 'https://gumcast-api.herokuapp.com',
+    apiUrl: 'https://api.gumcast.com',
     proxyFiles: 'redirect'
   },
-  lspReset: false
+  lspReset: 1
 })
 
 window.state = state
