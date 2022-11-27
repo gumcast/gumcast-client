@@ -2,6 +2,17 @@ import { html } from 'uhtml-isomorphic'
 
 const data = [
   {
+    date: '2022-11-27',
+    content: html`
+      Gumcast has identified a number of access tokens that appear to have been shared to a large number of users and
+      will begin the process of disabling feeds that meet this criteria. If your podcast subscription suddenly stops working, or you see
+      a warning message in your podcast feed, log back into Gumcast.com and grab a new RSS feed URL and re-subscribe to the new URL and unsubscribe from the disabled feed. You will lose
+      playback state most likely. Please ensure that these feeds are not shared or added to globally available podcast directories. If you
+      are not the subscription owner, please support your favorite creators and create your own Gumroad subscription and then create your personal
+      RSS feed URL on gumcast.com. Questions issues or comments can be directed to support@hifiwi.fi
+   `
+  },
+  {
     date: '2022-11-19',
     content: html`Gumcast has migrated hosting companies which means that podcast feed subscriptions URLs will change.
       Podcast apps should update automatically feeds from <code>gumcast-api.herokuapp.com</code> to <code>api.gumcast.com</code>, however sometimes this process fails due to bad podcast client behavior.
