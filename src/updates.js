@@ -2,6 +2,11 @@ import { html } from 'uhtml-isomorphic'
 
 const data = [
   {
+    date: '2022-12-08',
+    content: `Gumcast shipped improved stream support today. Most podcast clients don't know what to do with hls stream playlists, but some sort of support it (Like apple podcasts).
+    Ideally gumroad products support media content downloads for the best experience with gumcast. For those that don't however, gumcast will at least get you to the stream URL.`
+  },
+  {
     date: '2022-11-27',
     content: html`
       Gumcast has identified a number of access tokens that appear to have been shared to a large number of users and
