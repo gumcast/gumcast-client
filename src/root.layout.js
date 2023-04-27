@@ -35,7 +35,7 @@ export default async function rootLayout ({
       ${typeof children === 'string' ? html([children]) : children}
     </main>
     <footer>
-      © Gumcast · <a href="https://github.com/gumcast">Github</a> · <a href="https://github.com/gumcast/gumcast-client/issues">Contact</a>
+      © <a href="https://hifiwi.fi">HifiWi.fi</a> · <a href="https://github.com/gumcast">Source Code</a> · <a href="https://github.com/gumcast/gumcast-client/issues">Contact</a>  · <a href="https://status.gumcast.com">Status</a>
     </footer>
   </body>
 </html>`
