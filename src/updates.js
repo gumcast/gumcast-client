@@ -2,6 +2,12 @@ import { html } from 'uhtml-isomorphic'
 
 const data = [
   {
+    date: '2023-05-15',
+    content: `A new batch of tokens were disabled today due to high usage indicating feed sharing. This was prompted by an increased issue with global rate limiting from upstream Gumroad servers. 
+    If your feed stops working, please log in again and create a new feed, and as a reminder please support your creators do not share the feed URLs.
+    `
+  },
+  {
     date: '2022-12-08',
     content: `Gumcast shipped improved stream support today. Most podcast clients don't know what to do with hls stream playlists, but some sort of support it (Like apple podcasts).
     Ideally gumroad products support media content downloads for the best experience with gumcast. For those that don't however, gumcast will at least get you to the stream URL.`
