@@ -1,0 +1,8 @@
+.blog-index-footer {
+  & .archive-list {
+    display: inline-flex;
+    gap: 1em;
+    list-style-type: none;
+    padding-left: 0px;
+  }
+}

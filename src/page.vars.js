@@ -1,12 +1,5 @@
 import { html, render } from 'uhtml-isomorphic'
 
-export default function pageVars () {
-  return {
-    title: 'Library',
-    noindex: true
-  }
-}
-
 export async function postVars ({
   pages
 }) {

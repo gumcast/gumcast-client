@@ -1,8 +1,6 @@
 import { html } from 'uhtml-isomorphic'
-import { updates } from '../updates.js'
-import { faq } from '../faq.js'
 
-export default async function LoginPage () {
+export default async function LoginPage ({ vars }) {
   return html`
   <nav class="header-nav">
   <div class="breadcrumb">
@@ -15,13 +13,15 @@ export default async function LoginPage () {
   </div>
   </nav>
 
-  <h2>Library</h2>
+  <h2>Gumroad Library</h2>
   <ul class="products" id="products">
     Loading...
   </ul>
 
-  ${updates()}
+  <div>
+  <h3>Gumcast Updates</h3>
 
-  ${faq()}
+    ${html([vars.blogPostsHtml])}
+  <div>
 `
 }

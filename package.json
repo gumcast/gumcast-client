@@ -8,12 +8,14 @@
     "url": "https://github.com/gumcast/gumcast-client/issues"
   },
   "devDependencies": {
-    "top-bun": "^7.0.0",
+    "@voxpelli/tsconfig": "^10.0.0",
     "auto-changelog": "^2.3.0",
     "gh-release": "^7.0.0",
     "npm-run-all": "^4.1.5",
     "standard": "^17.0.0",
-    "tap": "^16.0.0"
+    "tap": "^16.0.0",
+    "top-bun": "^7.0.0",
+    "typescript": "~5.3.2"
   },
   "homepage": "https://github.com/gumcast/gumcast-client",
   "keywords": [],
@@ -42,9 +44,13 @@
   },
   "dependencies": {
     "@datadog/browser-rum": "^4.0.0",
+    "classnames": "^2.3.2",
     "fetch-undici": "^3.0.0",
+    "jsonfeed-to-atom": "^1.2.4",
     "local-storage-proxy": "^4.0.2",
     "mine.css": "^9.0.1",
-    "uhtml-isomorphic": "^2.0.0"
+    "p-map": "^6.0.0",
+    "uhtml-isomorphic": "^2.0.0",
+    "xmlbuilder": "^15.1.1"
   }
 }

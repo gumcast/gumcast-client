@@ -1,9 +1,13 @@
 @import "mine.css/dist/mine.css";
 @import "mine.css/dist/layout.css";
 
-footer {
+.gumcast-footer {
   text-align: center;
   margin: 3rem auto;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  gap: 10px;
 }
 
 .header-nav {

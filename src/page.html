@@ -1,13 +1,7 @@
-import { html } from 'uhtml-isomorphic'
-import { updates } from './updates.js'
-import { faq } from './faq.js'
-
-export default async function LoginPage () {
-  return html`
-  <nav class="header-nav">
+<nav class="header-nav">
 
   <div class="breadcrumb">
-    <span><a href="#">gumcast</a> / </span>
+    <span><a href="/">gumcast</a> / </span>
   </div>
 
   <div class="auth-buttons"></div>
@@ -38,8 +32,8 @@ export default async function LoginPage () {
   </fieldset>
 </form>
 
-${updates()}
+<div>
+  <h3>Gumcast Updates</h3>
 
-${faq()}
-  `
-}
+  {{{ vars.blogPostsHtml }}}
+<div>
