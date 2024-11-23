@@ -8,14 +8,13 @@
     "url": "https://github.com/gumcast/gumcast-client/issues"
   },
   "devDependencies": {
-    "@voxpelli/tsconfig": "^10.0.0",
+    "@voxpelli/tsconfig": "^15.0.0",
     "auto-changelog": "^2.3.0",
     "gh-release": "^7.0.0",
     "npm-run-all": "^4.1.5",
-    "standard": "^17.0.0",
-    "tap": "^16.0.0",
+    "neostandard": "^0.11.8",
     "top-bun": "^10.1.1",
-    "typescript": "~5.3.2"
+    "typescript": "~5.6.2"
   },
   "homepage": "https://github.com/gumcast/gumcast-client",
   "keywords": [],
@@ -27,8 +26,7 @@
   "scripts": {
     "prepublishOnly": "git push --follow-tags && gh-release",
     "test": "run-s test:*",
-    "test:standard": "standard",
-    "test-skip:tap": "tap",
+    "test:lint": "eslint",
     "start": "run-s watch",
     "version": "auto-changelog -p --template keepachangelog auto-changelog --breaking-pattern 'BREAKING CHANGE:' && git add CHANGELOG.md",
     "build": "npm run clean && run-p build:*",
@@ -37,13 +35,7 @@
     "watch:top-bun": "npm run build:top-bun -- --watch",
     "clean": "rm -rf public && mkdir -p public"
   },
-  "standard": {
-    "ignore": [
-      "dist"
-    ]
-  },
   "dependencies": {
-    "@datadog/browser-rum": "^4.0.0",
     "classnames": "^2.3.2",
     "fetch-undici": "^4.0.1",
     "jsonfeed-to-atom": "^1.2.4",
