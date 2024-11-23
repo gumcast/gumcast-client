@@ -49,7 +49,7 @@
     "jsonfeed-to-atom": "^1.2.4",
     "local-storage-proxy": "^4.0.2",
     "mine.css": "^10.0.0",
-    "p-map": "^6.0.0",
+    "p-map": "^7.0.2",
     "uhtml-isomorphic": "^2.0.0",
     "xmlbuilder": "^15.1.1"
   }
