@@ -37,7 +37,7 @@
   },
   "dependencies": {
     "classnames": "^2.3.2",
-    "fetch-undici": "^4.0.1",
+    "fetch-undici": "^5.0.0",
     "jsonfeed-to-atom": "^1.2.4",
     "local-storage-proxy": "^4.0.2",
     "mine.css": "^10.0.0",
