@@ -6,7 +6,7 @@ publishDate: "2024-12-25T22:35:01.304Z"
 handlebars: true
 ---
 
-It looks like 2024 is about to end and I there haven't been any udpates to Gumcast! Lets remedey that.
+It looks like 2024 is about to end and there haven't been any udpates to Gumcast! Lets remedey that.
 
 ## Join Our Discord
 
