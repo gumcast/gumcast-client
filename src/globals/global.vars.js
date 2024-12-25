@@ -7,6 +7,7 @@ export default async function globalVars () {
     authorUrl: 'https://hifiwi.fi',
     authorImgUrl: '/static/google-touch-icon-512x512.png',
     authorImgAlt: 'Gumcast Logo',
-    mastodonUrl: 'https://fosstodon.org/@hifiwifi'
+    mastodonUrl: 'https://fosstodon.org/@hifiwifi',
+    discordUrl: 'https://discord.gg/8A7xMJSm7u'
   }
 }

@@ -1,15 +1,15 @@
-import { html, render } from 'uhtml-isomorphic'
-
 /**
- * @template T
- * @typedef {import('top-bun').LayoutFunction<T>} LayoutFunction
+ * @import { LayoutFunction } from 'top-bun'
  */
+
+import { html, render } from 'uhtml-isomorphic'
 
 /**
  * @typedef {{
  *  title: string,
  *  siteName: string,
- *  mastodonUrl: string
+ *  mastodonUrl: string,
+ *  discordUrl: string
  * }} RootLayoutVars
  */
 
@@ -18,7 +18,8 @@ export default async function rootLayout ({
   vars: {
     title,
     siteName,
-    mastodonUrl
+    mastodonUrl,
+    discordUrl
   },
   scripts,
   styles,
@@ -63,6 +64,7 @@ export default async function rootLayout ({
       <a href="/feed.json"><img class="rounded-icon" height="14" width="14" src="/static/jsonfeed.svg"></a>
       <a href="/feed.xml"><img height="14" width="14" src="/static/rss.svg" ></a>
       <a href="${mastodonUrl}" rel="me"><img height="14" width="14" src="/static/mastodon.svg"></a>
+      <a href="${discordUrl}" rel="me"><img height="14" width="14" src="/static/discord.svg"></a>
     </footer>
   </body>
 </html>`)
