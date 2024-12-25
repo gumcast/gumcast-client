@@ -32,8 +32,10 @@
     "build": "npm run clean && run-p build:*",
     "build:top-bun": "tb",
     "watch": "npm run clean && run-p watch:*",
-    "watch:top-bun": "npm run build:top-bun -- --watch",
-    "clean": "rm -rf public && mkdir -p public"
+    "watch:top-bun": "npm run build:top-bun -- --watch --drafts",
+    "clean": "rm -rf public && mkdir -p public",
+    "new-blogpost": "node scripts/create-blogpost.js --title",
+    "publish-draft": "node scripts/publish-draft.js"
   },
   "dependencies": {
     "classnames": "^2.3.2",
