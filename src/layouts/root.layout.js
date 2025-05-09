@@ -43,6 +43,8 @@ export default async function rootLayout ({
     <link rel="alternate" title="HifiWi.fi (JSON Feed)" type="application/feed+json" href="/feed.json" />
     <link rel="alternate" title="HifiWi.fi (RSS Feed)" type="application/rss+xml"  href="/feed.xml" />
 
+    <script src="https://analytics.ahrefs.com/analytics.js" data-key="bgR4vggCoN4BfX0BQn6H2w" async></script>
+
     ${scripts
       ? scripts.map(script => html`<script src="${script}" type='module'></script>`)
       : null
